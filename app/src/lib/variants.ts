@@ -7,12 +7,18 @@ import { cn } from "./utils";
 export const buttonVariants = {
   base: "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-medium focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   variants: {
-    default: "bg-[#007c79] text-white hover:bg-[#1fa093] dark:bg-[#1fa093] dark:hover:bg-[#00ccbd]",
-    primary: "bg-[#007c79] text-white hover:bg-[#1fa093] dark:bg-[#1fa093] dark:hover:bg-[#00ccbd]",
-    secondary: "bg-[#f4f4f4] text-[#5e5e5e] hover:bg-[#919191] hover:text-white dark:bg-[#2a2a2a] dark:text-[#f4f4f4] dark:hover:bg-[#5e5e5e]",
-    outline: "border border-[#007c79] bg-transparent text-[#007c79] hover:bg-[#007c79] hover:text-white dark:border-[#1fa093] dark:text-[#1fa093] dark:hover:bg-[#1fa093] dark:hover:text-white",
-    ghost: "hover:bg-[#f4f4f4] text-[#5e5e5e] dark:hover:bg-[#2a2a2a] dark:text-[#f4f4f4]",
-    destructive: "bg-red-600 text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600",
+    default:
+      "bg-[#007c79] text-white hover:bg-[#1fa093] dark:bg-[#1fa093] dark:hover:bg-[#00ccbd]",
+    primary:
+      "bg-[#007c79] text-white hover:bg-[#1fa093] dark:bg-[#1fa093] dark:hover:bg-[#00ccbd]",
+    secondary:
+      "bg-[#f4f4f4] text-[#5e5e5e] hover:bg-[#919191] hover:text-white dark:bg-[#2a2a2a] dark:text-[#f4f4f4] dark:hover:bg-[#5e5e5e]",
+    outline:
+      "border border-[#007c79] bg-transparent text-[#007c79] hover:bg-[#007c79] hover:text-white dark:border-[#1fa093] dark:text-[#1fa093] dark:hover:bg-[#1fa093] dark:hover:text-white",
+    ghost:
+      "hover:bg-[#f4f4f4] text-[#5e5e5e] dark:hover:bg-[#2a2a2a] dark:text-[#f4f4f4]",
+    destructive:
+      "bg-red-600 text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600",
   },
   sizes: {
     default: "h-10 px-6 py-2",
@@ -28,13 +34,20 @@ export const buttonVariants = {
 export const badgeVariants = {
   base: "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2",
   variants: {
-    default: "bg-[#007c79] text-white hover:bg-[#1fa093] dark:bg-[#1fa093] dark:text-white dark:hover:bg-[#00ccbd]",
-    secondary: "bg-[#f4f4f4] text-[#5e5e5e] hover:bg-[#919191] hover:text-white dark:bg-[#2a2a2a] dark:text-[#f4f4f4] dark:hover:bg-[#5e5e5e]",
-    outline: "text-[#007c79] border-[#007c79] dark:text-[#1fa093] dark:border-[#1fa093]",
-    success: "bg-green-600 text-white hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600",
-    warning: "bg-yellow-600 text-white hover:bg-yellow-700 dark:bg-yellow-500 dark:hover:bg-yellow-600",
-    destructive: "bg-red-600 text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600",
-    accent: "bg-[#00ccbd] text-white hover:bg-[#1fa093] dark:bg-[#00ccbd] dark:hover:bg-[#1fa093]",
+    default:
+      "bg-[#007c79] text-white hover:bg-[#1fa093] dark:bg-[#1fa093] dark:text-white dark:hover:bg-[#00ccbd]",
+    secondary:
+      "bg-[#f4f4f4] text-[#5e5e5e] hover:bg-[#919191] hover:text-white dark:bg-[#2a2a2a] dark:text-[#f4f4f4] dark:hover:bg-[#5e5e5e]",
+    outline:
+      "text-[#007c79] border-[#007c79] dark:text-[#1fa093] dark:border-[#1fa093]",
+    success:
+      "bg-green-600 text-white hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600",
+    warning:
+      "bg-yellow-600 text-white hover:bg-yellow-700 dark:bg-yellow-500 dark:hover:bg-yellow-600",
+    destructive:
+      "bg-red-600 text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600",
+    accent:
+      "bg-[#00ccbd] text-white hover:bg-[#1fa093] dark:bg-[#00ccbd] dark:hover:bg-[#1fa093]",
   },
 } as const;
 

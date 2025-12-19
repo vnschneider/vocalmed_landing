@@ -2,13 +2,13 @@ import { NextRequest, NextResponse } from "next/server";
 import Groq from "groq-sdk";
 
 const groq = new Groq({
-	apiKey: process.env.GROQ_API_KEY,
+  apiKey: process.env.GROQ_API_KEY,
 });
 
 const getMedicalPrompt = (transcription: string) => {
-	const today = new Date().toLocaleDateString("pt-BR");
-	
-	return `# PERSONA
+  const today = new Date().toLocaleDateString("pt-BR");
+
+  return `# PERSONA
 Você é o Vocalmed AI, um assistente de documentação clínica especializado em português brasileiro (pt-BR).
 Sua função é analisar a transcrição de uma consulta médica e gerar documentação formal, precisa e estruturada seguindo os padrões brasileiros de saúde.
 
@@ -64,78 +64,84 @@ ${transcription}
 };
 
 export async function POST(request: NextRequest) {
-	try {
-		// Validação de API Key
-		if (!process.env.GROQ_API_KEY) {
-			return NextResponse.json(
-				{
-					error: "Serviço não configurado",
-					details: "GROQ_API_KEY não encontrada no .env.local",
-				},
-				{ status: 500 }
-			);
-		}
+  try {
+    // Validação de API Key
+    if (!process.env.GROQ_API_KEY) {
+      return NextResponse.json(
+        {
+          error: "Serviço não configurado",
+          details: "GROQ_API_KEY não encontrada no .env.local",
+        },
+        { status: 500 }
+      );
+    }
 
-		const formData = await request.formData();
-		const audioFile = formData.get("audio") as File;
+    const formData = await request.formData();
+    const audioFile = formData.get("audio") as File;
 
-		if (!audioFile) {
-			return NextResponse.json(
-				{ error: "Nenhum arquivo de áudio enviado" },
-				{ status: 400 }
-			);
-		}
+    if (!audioFile) {
+      return NextResponse.json(
+        { error: "Nenhum arquivo de áudio enviado" },
+        { status: 400 }
+      );
+    }
 
-		console.log("[/api/transcribe] Iniciando transcrição...");
+    console.log("[/api/transcribe] Iniciando transcrição...");
 
-		// Transcrição com Whisper via Groq (GRÁTIS!)
-		const transcription = await groq.audio.transcriptions.create({
-			file: audioFile,
-			model: "whisper-large-v3",
-			language: "pt",
-			response_format: "verbose_json",
-			prompt: "Transcrição de consulta médica em português brasileiro (pt-BR). Contexto clínico: anamnese, exame físico, hipóteses diagnósticas, prescrição médica. Termos médicos comuns no Brasil: paciente, sintomas, dor, febre, tosse, pressão arterial, diabetes, hipertensão, medicação, posologia, exames laboratoriais, eletrocardiograma, raio-x, ultrassom, retorno, atestado, receita médica, CID, prontuário eletrônico.",
-			temperature: 0.0,
-		});
+    // Transcrição com Whisper via Groq (GRÁTIS!)
+    const transcription = await groq.audio.transcriptions.create({
+      file: audioFile,
+      model: "whisper-large-v3",
+      language: "pt",
+      response_format: "verbose_json",
+      prompt:
+        "Transcrição de consulta médica em português brasileiro (pt-BR). Contexto clínico: anamnese, exame físico, hipóteses diagnósticas, prescrição médica. Termos médicos comuns no Brasil: paciente, sintomas, dor, febre, tosse, pressão arterial, diabetes, hipertensão, medicação, posologia, exames laboratoriais, eletrocardiograma, raio-x, ultrassom, retorno, atestado, receita médica, CID, prontuário eletrônico.",
+      temperature: 0.0,
+    });
 
-		console.log("[/api/transcribe] Transcrição concluída. Gerando prontuário...");
+    console.log(
+      "[/api/transcribe] Transcrição concluída. Gerando prontuário..."
+    );
 
-		// Gerar prontuário estruturado com LLM
-		const completion = await groq.chat.completions.create({
-			model: "llama-3.3-70b-versatile",
-			messages: [
-				{
-					role: "system",
-					content: "Você é um assistente médico especializado em documentação clínica. Responda APENAS com JSON válido, sem markdown ou explicações.",
-				},
-				{
-					role: "user",
-					content: getMedicalPrompt(transcription.text),
-				},
-			],
-			temperature: 0.1,
-			response_format: { type: "json_object" },
-		});
+    // Gerar prontuário estruturado com LLM
+    const completion = await groq.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
+      messages: [
+        {
+          role: "system",
+          content:
+            "Você é um assistente médico especializado em documentação clínica. Responda APENAS com JSON válido, sem markdown ou explicações.",
+        },
+        {
+          role: "user",
+          content: getMedicalPrompt(transcription.text),
+        },
+      ],
+      temperature: 0.1,
+      response_format: { type: "json_object" },
+    });
 
-		const medicalRecord = JSON.parse(completion.choices[0].message.content || "{}");
+    const medicalRecord = JSON.parse(
+      completion.choices[0].message.content || "{}"
+    );
 
-		console.log("[/api/transcribe] Prontuário gerado com sucesso!");
+    console.log("[/api/transcribe] Prontuário gerado com sucesso!");
 
-		return NextResponse.json({
-			success: true,
-			text: transcription.text,
-			duration: transcription.duration,
-			medicalRecord,
-		});
-	} catch (error) {
-		console.error("[/api/transcribe]", error);
+    return NextResponse.json({
+      success: true,
+      text: transcription.text,
+      duration: transcription.duration,
+      medicalRecord,
+    });
+  } catch (error) {
+    console.error("[/api/transcribe]", error);
 
-		return NextResponse.json(
-			{
-				error: "Erro ao processar transcrição",
-				details: error instanceof Error ? error.message : "Erro desconhecido",
-			},
-			{ status: 500 }
-		);
-	}
+    return NextResponse.json(
+      {
+        error: "Erro ao processar transcrição",
+        details: error instanceof Error ? error.message : "Erro desconhecido",
+      },
+      { status: 500 }
+    );
+  }
 }

@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "VocalMed - Landing Page",
   description: "Soluções inovadoras em saúde vocal",
+  icons: "/images/logo/vocalmed-logo.svg",
 };
 
 export default function RootLayout({

@@ -38,7 +38,7 @@ export function Hero() {
               <p className="max-w-xl text-base text-[#5e5e5e] dark:text-[#d1d1d1] sm:text-lg">
                 Vocalmed captura o áudio da consulta e gera automaticamente
                 resumos clínicos estruturados, plano terapêutico e orientações
-                para o paciente em poucos minutos.
+                para o paciente em poucos minutos
               </p>
             </div>
 

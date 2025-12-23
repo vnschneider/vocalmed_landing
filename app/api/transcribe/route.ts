@@ -9,7 +9,7 @@ const getMedicalPrompt = (transcription: string) => {
   const today = new Date().toLocaleDateString("pt-BR");
 
   return `# PERSONA
-Você é o Vocalmed AI, um assistente de documentação clínica especializado em português brasileiro (pt-BR).
+Você é o Vocal Med AI, um assistente de documentação clínica especializado em português brasileiro (pt-BR).
 Sua função é analisar a transcrição de uma consulta médica e gerar documentação formal, precisa e estruturada seguindo os padrões brasileiros de saúde.
 
 # CONTEXTO ATUAL

@@ -43,13 +43,13 @@ export default function Home() {
           <div className="mx-auto max-w-7xl">
             <div className="text-center mb-12">
               <p className="mb-3 text-xs font-bold uppercase tracking-wider text-[#00a89a]">
-                Nossa missão na Vocalmed
+                Nossa missão na Vocal Med
               </p>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3b3b3b] dark:text-[#f4f4f4] mb-4">
                 Consultas mais humanas, registros mais inteligentes
               </h2>
               <p className="text-base text-[#5e5e5e] dark:text-[#d1d1d1] max-w-3xl mx-auto">
-                Vocalmed foi criada para que médicos possam olhar mais para o
+                Vocal Med foi criada para que médicos possam olhar mais para o
                 paciente e menos para a tela. Enquanto você conduz a conversa,
                 nossa IA transforma a fala em registro clínico organizado.
               </p>
@@ -217,8 +217,8 @@ export default function Home() {
                   Da gravação ao prontuário em minutos.
                 </h3>
                 <p className="text-sm text-[#5e5e5e]">
-                  Em vez de digitar tudo ao final do dia, você ativa a Vocalmed,
-                  realiza a consulta normalmente e recebe um resumo clínico
+                  Em vez de digitar tudo ao final do dia, você ativa a Vocal
+                  Med, realiza a consulta normalmente e recebe um resumo clínico
                   estruturado, pronto para revisão e envio ao prontuário
                   eletrônico.
                 </p>
@@ -242,7 +242,7 @@ export default function Home() {
         id="recursos"
         eyebrow="Recursos principais"
         title="Tudo o que você precisa para registrar consultas com IA"
-        description="Da gravação segura à geração de documentos clínicos completos, a Vocalmed acompanha o fluxo de trabalho de consultórios e clínicas."
+        description="Da gravação segura à geração de documentos clínicos completos, a Vocal Med acompanha o fluxo de trabalho de consultórios e clínicas."
       >
         <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="group relative rounded-2xl bg-gradient-to-br from-[#00ccbd]/10 to-[#00a89a]/10 dark:from-[#00ccbd]/20 dark:to-[#00a89a]/20 p-6 border-2 border-[#00ccbd]/20 hover:border-[#00ccbd]/40 transition-all hover:shadow-xl hover:-translate-y-1">
@@ -558,7 +558,7 @@ export default function Home() {
                 Depoimentos
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#3b3b3b] dark:text-[#f4f4f4] mb-4">
-                Médicos que já registram consultas com a Vocalmed
+                Médicos que já registram consultas com a Vocal Med
               </h2>
               <p className="text-base text-[#5e5e5e] dark:text-[#d1d1d1] max-w-3xl mx-auto">
                 Veja como diferentes especialidades estão usando a gravação de
@@ -578,7 +578,7 @@ export default function Home() {
               <Testimonial
                 name="Dr. Ricardo Azevedo"
                 role="Cardiologista — Belo Horizonte/MG"
-                content="A Vocalmed virou parte natural do meu fluxo. Ganhei tempo de consulta e consigo explicar melhor o plano terapêutico ao paciente."
+                content="A Vocal Med virou parte natural do meu fluxo. Ganhei tempo de consulta e consigo explicar melhor o plano terapêutico ao paciente."
                 avatarImage="/images/Gemini_Generated_Image_lq2u5slq2u5slq2u (1).png"
                 avatarInitials="RA"
               />
@@ -596,9 +596,9 @@ export default function Home() {
 
       {/* Diferenciais */}
       <Section
-        eyebrow="Por que Vocalmed?"
+        eyebrow="Por que Vocal Med?"
         title="Pensada para a realidade do consultório"
-        description="Não é apenas um gravador com IA genérica. A Vocalmed nasce dentro do dia a dia de quem atende pacientes e precisa documentar com responsabilidade."
+        description="Não é apenas um gravador com IA genérica. A Vocal Med nasce dentro do dia a dia de quem atende pacientes e precisa documentar com responsabilidade."
       >
         <div className="grid gap-6 md:gap-8 md:grid-cols-3">
           <div className="group relative rounded-2xl bg-gradient-to-br from-[#00ccbd]/10 to-[#00a89a]/10 dark:from-[#00ccbd]/20 dark:to-[#00a89a]/20 p-6 border-2 border-[#00ccbd]/20 hover:border-[#00ccbd]/40 transition-all hover:shadow-xl hover:-translate-y-1">

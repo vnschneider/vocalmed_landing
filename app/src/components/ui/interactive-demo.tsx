@@ -284,7 +284,7 @@ export function InteractiveDemo() {
             </div>
             <div>
               <h3 className="mb-2 text-lg font-semibold text-[#3b3b3b] dark:text-[#f4f4f4]">
-                Teste a Vocalmed com IA Real
+                Teste a Vocal Med com IA Real
               </h3>
               <p className="text-sm text-[#5e5e5e] dark:text-[#d1d1d1]">
                 Grave sua voz agora e veja a IA transcrever e gerar um resumo

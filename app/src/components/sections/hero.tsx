@@ -32,11 +32,11 @@ export function Hero() {
               <h1 className="text-3xl font-semibold leading-tight text-[#3b3b3b] dark:text-[#f4f4f4] sm:text-4xl lg:text-5xl xl:text-[3.25rem] lg:leading-[1.1]">
                 Grave suas consultas
                 <span className="block text-[#007c79] dark:text-[#00ccbd]">
-                  Deixe a Vocalmed escrever por você
+                  Deixe a Vocal Med escrever por você
                 </span>
               </h1>
               <p className="max-w-xl text-base text-[#5e5e5e] dark:text-[#d1d1d1] sm:text-lg">
-                Vocalmed captura o áudio da consulta e gera automaticamente
+                Vocal Med captura o áudio da consulta e gera automaticamente
                 resumos clínicos estruturados, plano terapêutico e orientações
                 para o paciente em poucos minutos
               </p>

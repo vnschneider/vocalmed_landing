@@ -9,9 +9,9 @@ export function CtaSection() {
 
     const messages = {
       specialist:
-        "Olá! Vim através do site da Vocalmed e gostaria de agendar uma conversa com um especialista para conhecer melhor a plataforma. 👋",
+        "Olá! Vim através do site da Vocal Med e gostaria de agendar uma conversa com um especialista para conhecer melhor a plataforma. 👋",
       clinic:
-        "Olá! Vim através do site da Vocalmed e gostaria de conhecer os planos para clínicas e equipes médicas. Podemos conversar? 🏥",
+        "Olá! Vim através do site da Vocal Med e gostaria de conhecer os planos para clínicas e equipes médicas. Podemos conversar? 🏥",
     };
 
     const message = encodeURIComponent(messages[type]);
@@ -30,7 +30,7 @@ export function CtaSection() {
           </h2>
           <p className="text-base sm:text-lg text-white/90">
             Reduza o tempo de digitação, aumente o olhar para o paciente e deixe
-            a Vocalmed cuidar das notas clínicas e orientações.
+            a Vocal Med cuidar das notas clínicas e orientações.
           </p>
         </div>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center">

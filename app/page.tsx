@@ -178,7 +178,7 @@ export default function Home() {
                       </p>
                     </div>
 
-                    <div className="rounded-xl bg-white dark:bg-[#1a1a1a] p-4 shadow-sm border border-[#00ccbd]/10 animate-[fadeIn_0.6s_ease-in-out_1.1s_backwards] hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                    {/* <div className="rounded-xl bg-white dark:bg-[#1a1a1a] p-4 shadow-sm border border-[#00ccbd]/10 animate-[fadeIn_0.6s_ease-in-out_1.1s_backwards] hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
                       <div className="flex items-center gap-2 mb-2">
                         <div className="h-2 w-2 rounded-full bg-[#00a89a] animate-pulse" />
                         <p className="text-xs font-bold text-[#3b3b3b] dark:text-[#f4f4f4]">
@@ -188,7 +188,7 @@ export default function Home() {
                       <p className="text-xs text-[#5e5e5e] dark:text-[#d1d1d1]">
                         Receitas e orientações
                       </p>
-                    </div>
+                    </div> */}
 
                     <div className="rounded-xl bg-white dark:bg-[#1a1a1a] p-4 shadow-sm border border-[#00ccbd]/10">
                       <div className="flex items-center gap-2 mb-2">
@@ -315,7 +315,14 @@ export default function Home() {
                 <span className="font-semibold text-[#3b3b3b] dark:text-[#f4f4f4]">
                   Equipes e clínicas?
                 </span>{" "}
-                Fale conosco para planos personalizados
+                <a
+                  href="https://wa.me/5511954926082?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20da%20Vocalmed%20e%20gostaria%20de%20conhecer%20os%20planos%20personalizados%20para%20equipes%20e%20cl%C3%ADnicas.%20%F0%9F%8F%A5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#00a89a] hover:text-[#00ccbd] underline decoration-2 underline-offset-2 transition-colors"
+                >
+                  Fale conosco para planos personalizados
+                </a>
               </p>
             </div>
           </div>
@@ -421,25 +428,25 @@ export default function Home() {
         <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             {/* Header da seção */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-12 sm:mb-16 px-4">
               <p className="mb-3 text-xs font-bold uppercase tracking-wider text-[#00a89a]">
                 Nossa IA
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#3b3b3b] dark:text-[#f4f4f4] mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3b3b3b] dark:text-[#f4f4f4] mb-4 break-words">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ccbd] to-[#00a89a]">
                   Vital AI
                 </span>{" "}
                 — Inspirada em Vital Brazil
               </h2>
-              <p className="text-base text-[#5e5e5e] dark:text-[#d1d1d1] max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base text-[#5e5e5e] dark:text-[#d1d1d1] max-w-2xl mx-auto">
                 Nossa inteligência artificial homenageia um dos maiores
                 cientistas brasileiros
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
               {/* Coluna Esquerda: Foto do Vital Brazil */}
-              <div className="relative group max-w-sm mx-auto lg:mx-0">
+              <div className="relative group max-w-sm mx-auto lg:mx-0 w-full">
                 <div className="absolute -inset-2 bg-gradient-to-br from-[#00ccbd]/20 to-[#00a89a]/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
                 <div className="relative aspect-[3/4.5] rounded-2xl overflow-hidden shadow-2xl border border-[#00ccbd]/10">
                   <Image
@@ -452,7 +459,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="absolute bottom-4 left-4 right-4 bg-white/95 dark:bg-[#0f0f0f]/95 backdrop-blur-sm p-4 rounded-xl border border-[#00ccbd]/20 shadow-lg">
-                  <p className="text-[#3b3b3b] dark:text-[#f4f4f4] font-bold text-lg mb-0.5">
+                  <p className="text-[#3b3b3b] dark:text-[#f4f4f4] font-bold text-base sm:text-lg mb-0.5 break-words">
                     Vital Brazil Mineiro da Campanha
                   </p>
                   <p className="text-[#5e5e5e] dark:text-[#d1d1d1] text-sm">
@@ -462,16 +469,16 @@ export default function Home() {
               </div>
 
               {/* Coluna Direita: Conexão Vital Med ↔ Vital Brazil */}
-              <div className="flex flex-col justify-center space-y-8">
+              <div className="flex flex-col justify-center space-y-6 sm:space-y-8">
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 bg-[#00ccbd]/10 dark:bg-[#00ccbd]/20 px-4 py-2 rounded-full border border-[#00ccbd]/20">
-                    <Brain className="h-4 w-4 text-[#00a89a]" />
-                    <span className="text-sm font-semibold text-[#00a89a]">
+                    <Brain className="h-4 w-4 text-[#00a89a] flex-shrink-0" />
+                    <span className="text-xs sm:text-sm font-semibold text-[#00a89a]">
                       Inteligência Artificial Médica
                     </span>
                   </div>
 
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#3b3b3b] dark:text-[#f4f4f4]">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#3b3b3b] dark:text-[#f4f4f4]">
                     A{" "}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ccbd] to-[#00a89a]">
                       Vital AI
@@ -479,14 +486,14 @@ export default function Home() {
                     é inspirada no legado de Vital Brazil
                   </h3>
 
-                  <p className="text-base text-[#5e5e5e] dark:text-[#d1d1d1] leading-relaxed">
+                  <p className="text-sm sm:text-base text-[#5e5e5e] dark:text-[#d1d1d1] leading-relaxed">
                     Assim como o cientista revolucionou a medicina com inovação
                     e dedicação, nossa IA busca transformar o dia a dia dos
                     profissionais de saúde.
                   </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="flex gap-3">
                     <div className="flex-shrink-0 mt-1">
                       <div className="h-2 w-2 rounded-full bg-[#00a89a]" />

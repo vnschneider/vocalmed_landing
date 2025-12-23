@@ -36,16 +36,19 @@ export function PricingSection() {
     {
       name: "Básico",
       monthlyPrice: 119.99,
+      annualPrice: 95.99, // 20% de desconto
       description: "Para profissionais iniciantes",
       features: ["30 consultas/mês", "Todos os recursos", "Suporte por email"],
       buttonText: "Assinar agora",
       buttonStyle:
         "bg-[#f4f4f4] dark:bg-[#1a1a1a] text-[#3b3b3b] dark:text-[#f4f4f4] hover:bg-[#e5e5e5] dark:hover:bg-[#2a2a2a]",
       popular: false,
+      hasAnnual: true,
     },
     {
       name: "Profissional",
       monthlyPrice: 199.99,
+      annualPrice: 159.99, // 20% de desconto
       description: "Para médicos ativos",
       features: [
         "50 consultas/mês",
@@ -56,6 +59,7 @@ export function PricingSection() {
       buttonStyle:
         "bg-gradient-to-r from-[#00ccbd] to-[#00a89a] text-white hover:shadow-xl",
       popular: true,
+      hasAnnual: true,
     },
     {
       name: "Ilimitado",
@@ -94,10 +98,23 @@ export function PricingSection() {
   };
 
   const getSavings = () => {
-    const monthly = 299.99;
-    const annual = 239.99;
-    const yearlyDiff = (monthly - annual) * 12;
-    return yearlyDiff.toFixed(2).replace(".", ",");
+    // Calcula a economia total anual considerando todos os planos pagos
+    const totalSavings = plans
+      .filter((plan) => plan.hasAnnual && plan.annualPrice)
+      .reduce((acc, plan) => {
+        const yearlyDiff = (plan.monthlyPrice - plan.annualPrice!) * 12;
+        return acc + yearlyDiff;
+      }, 0);
+
+    // Retorna a média de economia ou a economia do plano mais popular
+    const professionalPlan = plans.find((p) => p.name === "Profissional");
+    if (professionalPlan?.annualPrice) {
+      const yearlyDiff =
+        (professionalPlan.monthlyPrice - professionalPlan.annualPrice) * 12;
+      return yearlyDiff.toFixed(2).replace(".", ",");
+    }
+
+    return "0,00";
   };
 
   return (
@@ -248,11 +265,9 @@ export function PricingSection() {
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00ccbd]/10 to-[#00a89a]/10 dark:from-[#00ccbd]/20 dark:to-[#00a89a]/20 border border-[#00a89a]/30 rounded-lg px-4 py-3">
             <Sparkles className="w-5 h-5 text-[#00a89a]" />
             <p className="text-sm text-[#5e5e5e] dark:text-[#d1d1d1]">
-              Economize{" "}
-              <span className="font-bold text-[#00a89a]">
-                R$ {getSavings()}
-              </span>{" "}
-              por ano com o plano anual
+              Com o plano anual você{" "}
+              <span className="font-bold text-[#00a89a]">economiza 20%</span> —
+              até R$ {getSavings()} por ano
             </p>
           </div>
         </div>
